@@ -32,7 +32,7 @@
 10. Once this step is complete, you will have the json files needed to run graph2vec. Run the following command in your terminal from the PythonPortion directory:
     `python3 graph2vec/src/graph2vec.py --input-path graph2vec/dataset/graph2vec_input/representationName --output-path graph2vec/features/graphEmbedding_representationName.csv`
 
-    Where the representation name is either cfg, pdg, sdg or cg. Run this command individually for each representation.
+    Where the representationName is either cfg, pdg, sdg or cg. Run this command individually for each representation.
 
 11. This has created the embeddings. For each representation you wish to run the ML model on, run the corresponding mlExperiments Python file. You may need to install some libraries, such as pandas, scikit-learn and pytorch. 
 
