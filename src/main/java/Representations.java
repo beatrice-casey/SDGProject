@@ -47,16 +47,16 @@ public class Representations {
 
             PointerAnalysis<InstanceKey> pa = builder.getPointerAnalysis();
 
-            //SDG<InstanceKey> sdg = createSDG(callGraph, pa);
-            //writeSDGResults(sdg, i);
+            SDG<InstanceKey> sdg = createSDG(callGraph, pa);
+            writeSDGResults(sdg, i);
 
             ControlFlowGraph<SSAInstruction, ISSABasicBlock> cfg = createCFG(callGraph);
             writeCFGResults(cfg, i);
 
-            //ArrayList<PDG> pdgs = createPDG(sdg, callGraph);
-            //writePDGResults(pdgs, i);
+            ArrayList<PDG> pdgs = createPDG(sdg, callGraph);
+            writePDGResults(pdgs, i);
 
-            //writeCallGraphResults(callGraph, i);
+            writeCallGraphResults(callGraph, i);
         }
 
     }

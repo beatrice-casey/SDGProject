@@ -12,11 +12,13 @@
     If your environment is correct, this command should succeed.
 5. Currently, the Java files in the reources folder are all the clean versions of the original code. If you want the original vulnerable code snippets, go to the following link and download the folder: https://github.com/find-sec-bugs/juliet-test-suite/tree/master/src/testcases/CWE15_External_Control_of_System_or_Configuration_Setting
 
-6. All of the jar files have already been generated. However, if you want to compile new jar files, ensure you have any dependent files in the resources folder with the code you wish to compile, and do the following commands:
+6. All of the jar files have already been generated. However, if you want to compile new jar files, ensure you have any dependent files in the resources folder with the code you wish to compile, and run the following commands:
     `cd src/main/resources`
 
     `javac ClassName.java --release 8`
+
     `jar cvf train/train_#.jar *.class` 
+
     `rm *.class`
 
     The naming convention for the jar files are test_# where # is a number that follows the normal ordering convention starting from 0. E.g. if you have 3 jar files, then they should be named train_0.jar, train_1.jar and train_2.jar. Again, the train folder is already populated, but should you choose to have your own test cases please follow these instructions.
@@ -29,6 +31,8 @@
 
 10. Once this step is complete, you will have the json files needed to run graph2vec. Run the following command in your terminal from the PythonPortion directory:
     `python3 graph2vec/src/graph2vec.py --input-path graph2vec/dataset/graph2vec_input/representationName --output-path graph2vec/features/graphEmbedding_representationName.csv`
+
+    Where the representation name is either cfg, pdg, sdg or cg. Run this command individually for each representation.
 
 11. This has created the embeddings. For each representation you wish to run the ML model on, run the corresponding mlExperiments Python file. You may need to install some libraries, such as pandas, scikit-learn and pytorch. 
 
