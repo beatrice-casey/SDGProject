@@ -29,8 +29,8 @@ def convert_to_json(rep_type):
 
 
 convert_to_json("cfg")
-#convert_to_json("cg")
-#convert_to_json("pdg")
-#convert_to_json("sdg")
+convert_to_json("cg")
+convert_to_json("pdg")
+convert_to_json("sdg")
 
 
